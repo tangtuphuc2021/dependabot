@@ -18,7 +18,7 @@ jobs:
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
 
       - name: Pull Docker image
-        run: docker pull nodejsapp
+        run: docker pull node:latest
 
       - name: Deploy Docker Compose application
         run: docker-compose up -d
