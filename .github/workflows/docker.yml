@@ -21,4 +21,4 @@ jobs:
         run: docker pull node:latest
 
       - name: Deploy Docker Compose application
-        run: docker-compose up -d
+        run: docker build -t app .
