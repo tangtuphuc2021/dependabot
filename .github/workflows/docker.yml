@@ -20,5 +20,15 @@ jobs:
       - name: Pull Docker image
         run: docker pull node:latest
 
-      - name: Deploy Docker Compose application
-        run: docker build -t app .
+      - name: Build and push Docker image
+        id: docker_build
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          file: ./Dockerfile
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: tangtuphuc/teac:v1
+          builder: ${{ steps.buildx.outputs.name }}
+          
+      - name: Verify
+        run: echo ${{ steps.docker_build.outputs.digest }}
