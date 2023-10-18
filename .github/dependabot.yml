@@ -13,3 +13,10 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "weekly"  
+registries:
+  dockerhub:
+    type: docker-registry
+    url: https://registry.hub.docker.com
+    username: tangtuphuc2017@gmail.com
+    password: Londonisblue2020
+    replaces-base: true
