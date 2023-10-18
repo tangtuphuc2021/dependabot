@@ -1,5 +1,5 @@
 #builder first
-FROM node:16-alpine
+FROM node:20-alpine
 # Create app directory
 WORKDIR /app
 COPY package.json package-lock.json ./
