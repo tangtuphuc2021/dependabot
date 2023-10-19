@@ -10,7 +10,6 @@ registries:
     url: registry.hub.docker.com
     username: ${{secrets.DOCKER_HUB_USERNAME}}
     password: ${{secrets.DOCKER_HUB_PASSWORD}}
-
 updates:
   - package-ecosystem: "npm" # See documentation for possible values
     directory: "/" # Location of package manifests
