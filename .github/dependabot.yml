@@ -18,7 +18,7 @@ updates:
       interval: "weekly"  
   - package-ecosystem: "docker" # See documentation for possible values
     directory: "/" # Location of package manifests
-    insecure-external-code-execution: "allow"
+    insecure-external-code-execution: deny
     registries:
       - dockerhub
     schedule:
