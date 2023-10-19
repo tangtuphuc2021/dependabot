@@ -4,6 +4,13 @@
 # https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates3
 
 version: 2
+registries:
+  dockerhub:
+    type: docker-registry
+    url: registry.hub.docker.com
+    username: ${{secrets.DOCKERHUB_USERNAME}}
+    password: ${{secrets.DOCKERHUB_PASSWORD}}
+
 updates:
   - package-ecosystem: "npm" # See documentation for possible values
     directory: "/" # Location of package manifests
@@ -11,6 +18,9 @@ updates:
       interval: "weekly"  
   - package-ecosystem: "docker" # See documentation for possible values
     directory: "/" # Location of package manifests
+    insecure-external-code-execution: allow
+    registries:
+      - dockerhub
     schedule:
       interval: "weekly"  
 
